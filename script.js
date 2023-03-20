@@ -1,6 +1,14 @@
 // Get the modal
 var modal = document.getElementById("loginModal");
 
+var loginBtn = document.getElementById("loginButton");
+
+const trialFunc = async() => {
+  let response = await fetch("http://localhost:8080/users");
+  console.log(response);
+}
+loginBtn.addEventListener('click', trialFunc);
+
 // Get the button that opens the login modal
 var loginModalButton = document.getElementById("loginModalButton");
 // When the user clicks on the button, open the modal
