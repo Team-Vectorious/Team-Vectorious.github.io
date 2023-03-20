@@ -4,8 +4,9 @@ var modal = document.getElementById("loginModal");
 var loginBtn = document.getElementById("loginButton");
 
 const trialFunc = async() => {
-  let response = await fetch("http://localhost:8080/users");
-  console.log(response);
+  // let response = await fetch("http://localhost:8080/users");
+  // console.log(response);
+  console.log("Hello")
 }
 loginBtn.addEventListener('click', trialFunc);
 
