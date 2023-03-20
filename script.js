@@ -2,9 +2,6 @@
 var modal = document.getElementById("loginModal");
 
 var loginBtn = document.getElementById("loginButton");
-loginBtn.onclick = function() {
-  console.log("Hello there");
-}
 
 // const trialFunc = async() => {
 //   // let response = await fetch("http://localhost:8080/users");
@@ -17,6 +14,7 @@ loginBtn.onclick = function() {
 var loginModalButton = document.getElementById("loginModalButton");
 // When the user clicks on the button, open the modal
 loginModalButton.onclick = function() {
+  console.log("Hello there");
   modal.style.display = "block";
 }
 
