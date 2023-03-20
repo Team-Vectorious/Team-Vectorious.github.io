@@ -2,13 +2,16 @@
 var modal = document.getElementById("loginModal");
 
 var loginBtn = document.getElementById("loginButton");
-
-const trialFunc = async() => {
-  // let response = await fetch("http://localhost:8080/users");
-  // console.log(response);
-  console.log("Hello")
+loginBtn.onclick = function() {
+  console.log("Hello there");
 }
-loginBtn.addEventListener('click', trialFunc);
+
+// const trialFunc = async() => {
+//   // let response = await fetch("http://localhost:8080/users");
+//   // console.log(response);
+//   console.log("Hello")
+// }
+// loginBtn.addEventListener('click', trialFunc);
 
 // Get the button that opens the login modal
 var loginModalButton = document.getElementById("loginModalButton");
