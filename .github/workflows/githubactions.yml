@@ -29,8 +29,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: |
-          chmod +x ./bunkmateweb/mvnw
-          ./bunkmateweb/mvnw
+          cd bunkmateweb/
+          mvn -B package --file pom.xml
     
     - name: copy file via ssh key
       uses: appleboy/scp-action@v0.1.4
