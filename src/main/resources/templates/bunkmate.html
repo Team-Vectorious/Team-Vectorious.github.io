@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>BunkMate</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/homepagestyle.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("images/homepageroom.png");
+  min-height: 75%;
+}
+
+</style>
+</head>
+<body>
+
+<!--Login Form -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div>
+        <input type="text" name="usernameTextField" placeholder="Username">
+      </div>
+      <p></p>
+      <input type="text" name="passwordTextField" placeholder="Password">
+      <p></p>
+      <button id="loginButton">Log In</button>
+      <p></p>
+    </div>
+</div>
+
+<!--Login and Sign up Buttons -->
+<div class="bk-top">
+  <div class="bk-row bk-padding bk-orange">
+    <div class="bk-col s6">
+      <button class="bk-button bk-block bk-orange" id="loginModalButton">Login</a>
+    </div>
+    <div class="bk-col s6">
+      <button class="bk-button bk-block bk-orange" onclick="window.location.href='signup'">Sign Up</a>
+    </div>
+  </div>
+</div>
+
+<!-- Main title Header -->
+<header class="bgimg bk-display-container bk-grayscale-min" id="home">
+  <div class="bk-display-middle bk-center">
+    <span class="bk-text-white bk-text-black" style="font-size:90px">Bunkfdsfdsmfdsaate</span>
+  </div>
+</header>
+
+<div class="bk-sand bk-large">
+<!-- About Section -->
+<div class="bk-container" id="about">
+  <div class="bk-content" style="max-width:700px">
+    <h5 class="bk-center bk-padding-16"><span class="bk-tag bk-wide bk-orange">ABOUT BUNKMATE</span></h5>
+    <p>
+	Hey you! Do you hate looking for housing? Do you get annoyed of the really outdated websites you are forced to use? Have you gone on craigslist or facebook only to found lack of features and basic innovation? Well, then bunkmate is perfect for you!
+	</p>
+    <p>
+	In comes BunkMate. Bunkmate is a housing website that stands out from the rest by offering a range of features that one might need. With Bunkmate, users can filter their search results based on a variety of factors, including location, price, and preferred living situation. Each user has a detailed profile that includes biographical information, hobbies, and pictures, making it easier to find potential roommates with similar interests and lifestyles. 
+	</p>
+	<p> Finally, each listing on Bunkmate includes an organized and readable description of the property and its amenities, so renters can easily compare and evaluate different options. With these features, Bunkmate provides a user-friendly and effective solution to the common problems associated with conventional housing websites.
+	</p>
+  </div>
+</div>
+  <script src="js/script.js"></script>
+</body>
+</html>
