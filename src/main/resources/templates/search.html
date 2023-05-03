@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-  scale=1">
+    <title>Search Page</title>
+    <link href="css/search.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<button id="create-post-btn">CREATE POST</button>
+
+<!--Working search bar-->
+<form action="/" method="GET">
+    <input type="text" name="searchTerm" placeholder="Search for a room...">
+    <button type="submit">Search</button>
+</form>
+
+<!--This displays the first initial of the user that logged in. This is just an example.-->
+<button id="profile-btn" th:text="${names[1].firstName}"></button>
+
+<!--When the user clicks on the profile button, their 'about me' section pops up.-->
+<div id="biography-popup" th:style="${isVisible} ? 'display:block;' : 'display:none;'">
+    <h2 style="text-align: center;" th:text="${names[1].firstName} + ' ' + ${names[1].lastName}"></h2>
+    <p>This is the user's biography.</p>
+</div>
+
+<script th:inline="javascript">
+      const profileBtn = document.getElementById("profile-btn");
+      const biographyBlock = document.getElementById("biography-popup");
+      let isVisible = false;
+      profileBtn.addEventListener("click", () => {
+        if (isVisible) {
+          biographyBlock.style.display = "none";
+          isVisible = false;
+        } else {
+          biographyBlock.style.display = "block";
+          isVisible = true;
+        }
+      });
+
+</script>
+
+<!--For every listing in the roomListings database, output the address and the price.-->
+<ul>
+    <li th:each="listing : ${listings}">
+        <img th:src="'data:image/jpg;base64,' + ${#strings.toString(listing.image.data)}" width="200"/>
+        <p th:text="${listing.address}"></p>
+        <p th:text="'$' + ${listing.price} + ' /month'"></p>
+    </li>
+</ul>
+
+<div class="light"></div>
+<script src="js/search.js"></script>
+</body>
+</html>
