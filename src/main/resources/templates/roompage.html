@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
-	<title>Cozy Room i hate spring Rent</title>
+	<title th:text="${listing.title}">Room</title>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
@@ -14,24 +14,23 @@
 <body>
 	<div class="container">
 	<div class="title">
-    <h1 th:text="${title}">Default i hate spring</h1>
+    <h1 th:text="${listing.title}">Room</h1>
 </div>
-
 		<div class="room-image">
-			<img src="https://via.placeholder.com/800x400" alt="Example Image">
+			<img th:attr="src='data:image/jpg;base64,' + ${image}" alt="Example Image">
 		</div>
 		<div class="room-details">
-			<p>Looking for a cozy and comfortable place to stay? Our fully furnished room for rent has everything you need for a comfortable stay. The room is equipped with a comfortable bed, a desk for studying or working, and ample storage space for your belongings. The room also has a large window that provides plenty of natural light and a great view of the surrounding area.</p>
+			<p th:text="${listing.description}">Nice room.</p>
 			<ul>
-				<li><strong>Price:</strong>  $1000/month</li>
-				<li><strong>Location:</strong> Downtown area</li>
+				<li><strong>Price:</strong> <span th:text="${listing.price}"></span> </li>
+				<li><strong>Location:</strong> <span th:text="${listing.address}"></span> </li>
 			</ul>
 		</div>
 		<div class="contact-details">
 			<h2>Contact Information</h2>
 			<ul>
-				<li><strong>Email:</strong> example@email.com</li>
-				<li><strong>Phone:</strong> 123-456-7890</li>
+				<li><strong>Email:</strong> <span th:text="${listing.user.email}"></span> </li>
+				<li><strong>Phone:</strong> <span th:text="${listing.user.phoneNumber}"></span> </li>
 			</ul>
 		</div>
 	</div>

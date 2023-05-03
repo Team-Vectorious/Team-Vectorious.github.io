@@ -16,11 +16,11 @@ import java.util.List;
 public class User {
     @Id
     private ObjectId id;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String phoneNumber;
-    private String password;
+    public String firstName;
+    public String lastName;
+    public String email;
+    public String phoneNumber;
+    public String password;
     @DocumentReference
     private List<RoomListing> roomListingIds;
 
