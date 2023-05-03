@@ -45,7 +45,8 @@
 
 <ul>
     <li th:each="listing : ${listings}">
-        <img th:src="'data:image/jpg;base64,' + ${#strings.toString(listing.image.data)}" width="200"/>
+       <img th:src="'data:image/jpg;base64,' + ${#strings.toString(listing.image.base64data)}" width="200"/>
+       
         <p th:text="${listing.address}"></p>
         <p th:text="'$' + ${listing.price} + ' /month'"></p>
     </li>
