@@ -18,8 +18,6 @@ import org.bson.types.Binary;
 public class RoomListing {
     @Id
     private ObjectId id;
-    public String body="";
-    
     public String title;
     public String description;
     public int price;
@@ -27,10 +25,16 @@ public class RoomListing {
     
     @DocumentReference
     public User user;
-
     public Image image;
-    
-    public RoomListing(String body) {
-        this.body = body;
+
+    public RoomListing(String title, String description, String price, String address) {
+        this.title = title;
+        this.description = description;
+        this.price = Integer.parseInt(price);
+        this.address = address;
     }
+
+//    public RoomListing(String body) {
+//        this.body = body;
+//    }
 }

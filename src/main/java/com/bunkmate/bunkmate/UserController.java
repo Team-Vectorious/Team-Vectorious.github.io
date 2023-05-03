@@ -33,7 +33,7 @@ public class UserController {
 
     @CrossOrigin
     @PostMapping("/signup")
-    public ResponseEntity<User> createRoomListing(@RequestBody User user) {
+    public ResponseEntity<User> createUser(@RequestBody User user) {
         return new ResponseEntity<User>(userService.createUser(user), HttpStatus.CREATED);
     }
 
