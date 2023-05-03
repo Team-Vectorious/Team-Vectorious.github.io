@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<link href="css/search.css" rel="stylesheet" type="text/css">
+<html lang="en">
+
+<button id="create-post-btn">CREATE POST</button>
+
+<!--Working search bar-->
+<form action="/" method="GET">
+  <input type="text" name="searchTerm" placeholder="Search for a room...">
+  <button type="submit">Search</button>
+</form>
+
+<!--This displays the first initial of the user that logged in. This is just an example.-->
+<button id="profile-btn">A</button>
+
+<!--When the user clicks on the profile button, their 'about me' section pops up.-->
+<div id="biography-popup" style="display: none;">
+  <h2 style="text-align: center;">Abhinav Neelam</h2>
+  <p>This is the user's biography.</p>
+</div>
+
+<script>
+  const profileBtn = document.getElementById("profile-btn");
+  const biographyBlock = document.getElementById("biography-popup");
+  let isVisible = false;
+
+  profileBtn.addEventListener("click", () => {
+    if (isVisible) {
+      biographyBlock.style.display = "none";
+      isVisible = false;
+    } else {
+      biographyBlock.style.display = "block";
+      isVisible = true;
+    }
+  });
+</script>
+
+<!--For every listing in the roomListings database, output the address and the price.-->
+<ul>
+</ul>
