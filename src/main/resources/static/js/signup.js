@@ -8,7 +8,7 @@ const createUser = async() => {
   let pword = document.getElementById("passwordInput").value;
 
   //fetch("http://ec2-13-57-25-128.us-west-1.compute.amazonaws.com:8080/users/signup"
-  let response = await     fetch("http://localhost:8080/users/signup", {
+  let response = await     fetch("/signup", {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
