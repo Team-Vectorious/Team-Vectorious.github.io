@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<link href="/search.css" rel="stylesheet" type="text/css">
+<script src="search.js"></script>
+<html lang="en">
+
+<button id="create-post-btn">CREATE POST</button>
+
+<!--Working search bar-->
+<form action="/" method="GET">
+  <input type="text" name="searchTerm" placeholder="Search for a room...">
+  <button type="submit">Search</button>
+</form>
+
+<!--This displays the first initial of the user that logged in. This is just an example.-->
+<button id="profile-btn"><%=names[1].firstName[0]%></button>
+
+<!--When the user clicks on the profile button, their 'about me' section pops up.-->
+<div id="biography-popup" style="display: none;">
+  <h2 style="text-align: center;"><%=names[1].firstName + " " + names[1].lastName%></h2>
+  <p>This is the user's biography.</p>
+</div>
+
+<script>
+  const profileBtn = document.getElementById("profile-btn");
+  const biographyBlock = document.getElementById("biography-popup");
+  let isVisible = false;
+
+  profileBtn.addEventListener("click", () => {
+    if (isVisible) {
+      biographyBlock.style.display = "none";
+      isVisible = false;
+    } else {
+      biographyBlock.style.display = "block";
+      isVisible = true;
+    }
+  });
+</script>
+
+<!--For every listing in the roomListings database, output the address and the price.-->
+<ul>
+  <% for (let i = 0; i < listings.length; i++) { %>
+    <li><img src="data:image/jpg;base64,<%= listings[i].image.data.toString('base64') %>" width="200"/>
+      <p><%= listings[i].address %></p>
+      <p><%= "$" + listings[i].price + " /month"%></p>
+    </li>
+   <% } %>
+</ul>
+
+
+<div class="light"></div>
+
