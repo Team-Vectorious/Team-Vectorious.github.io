@@ -24,6 +24,7 @@ button[type="submit"] {
     cursor: pointer;
 
 }
+
 #create-post-btn {
     position: fixed;
     width: 150px;
