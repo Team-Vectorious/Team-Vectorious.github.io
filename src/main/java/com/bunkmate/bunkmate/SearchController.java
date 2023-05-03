@@ -12,6 +12,7 @@ public class SearchController {
 	
     @GetMapping("/search")
     public String searchpage(Model model) {
+    	model.addAttribute("user", null);
         return "search";
     }
 }

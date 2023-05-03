@@ -32,5 +32,5 @@ public class RoomListingService {
     public RoomListing getRoomListing(String id) {
     	return roomListingRepository.findRoomListingById(id);
     	//return null;
-    }
+    } 
 }
