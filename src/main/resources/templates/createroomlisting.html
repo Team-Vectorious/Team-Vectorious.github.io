@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-  scale=1">
+  <title>Create Room Listing</title>
+  <style>
+      * { box-sizing: border-box; }
+      .column1 {
+        float: left;
+        width: 35%;
+        padding: 10px;
+        height: 600px;
+      }
+      .column2 {
+        float: left;
+        width: 65%;
+        padding: 10px;
+        height: 600px;
+      }
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+
+    </style>
+
+  <link rel="stylesheet" href="css/createroomlisting.css">
+</head>
+<body>
+<div class="row">
+  <div class="column1">
+    <img src="images/noImage.jpg" style=width:500px; height:550px; text-align: left;>
+  </div>
+
+  <div class="column2" style="background-color:#aaa;">
+    <h1 style="padding-left: 30px; padding-top: 10px;">Create Room Listing</h1>
+    <form style="padding-left: 30px;">
+      <label for="title">Title:</label><br>
+      <input placeholder=" Enter Title" style="width: 300px;" type="text" id="titleInput" name="title"><br>
+      <label for="description">Description:</label><br>
+      <textarea id="descriptionInput" placeholder=" Enter Description" rows="5" cols="38"></textarea><br>
+      <label for="price">Price:</label><br>
+      <input placeholder=" Enter Price" style="width: 300px;" type="text" id="priceInput" name="price"><br>
+      <label for="address">Address:</label><br>
+      <textarea id="addressInput" placeholder=" Enter Address" rows="5" cols="38"></textarea><br>
+    </form>
+
+    <button id="postButton">Post Listing</button>
+  </div>
+</div>
+<script src="js/createroomlisting.js"></script>
+</body>
+</html>

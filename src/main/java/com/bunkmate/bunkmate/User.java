@@ -21,8 +21,6 @@ public class User {
     public String email;
     public String phoneNumber;
     public String password;
-    @DocumentReference
-    private List<RoomListing> roomListingIds;
 
     public User(String firstName, String lastName, String email, String phoneNumber, String password) {
         this.firstName = firstName;
@@ -30,6 +28,5 @@ public class User {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.password = password;
-        this.roomListingIds = null;
     }
 }

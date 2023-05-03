@@ -1,29 +1,95 @@
-/* body css for whole page */
-body
-{
-    margin:0px;
-    background-color:lightcoral;
-    color:#f9fcf5;
-    font-family:Helvetica, sans-serif;
+* {
+    box-sizing: border-box;
+}
+.h-tag {
+    display: flex;
+    align-items: center;
 }
 
-#main{width:600px; height:auto; overflow:hidden; padding-bottom:20px; margin-left:auto; margin-right:auto;
-    border-radius:5px; padding-left:10px; margin-top:50px; border-top:3px double #f1f1f1;
-    border-bottom:3px double #f1f1f1; padding-top:20px;
+
+.h-tag img {
+    width: 300px;
+    height: 300px;
+    margin-left: 10px;
+    margin-right: 40px;
+    margin-bottom: 50px;
 }
 
-#main table{font-family:Helvetica, sans-serif;}
-/* css code for textbox */
-#main .tb{height:28px; width:230px; border:1px solid #f26724; color:#fd7838; font-weight:bold; border-left:5px solid #f7f7f7; opacity:0.9;}
+/* Use a modern sans-serif font */
+body {
+    margin: 0;
+    background-color: #f7f3ea;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
 
-#main .tb:focus{height:28px; border:1px solid #f26724; outline:none; border-left:5px solid #f7f7f7;}
+/* Use flexbox to center the content vertically and horizontally */
+#main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+    margin: 50px auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #f7f3ea, #e7e0d1);
+}
 
-/* css code for button*/
-#main .btn{width:150px; height:32px; outline:none;  color:#f7f7f7; font-weight:bold; border:0px solid #f26724;
-    text-shadow: 0px 0.5px 0.5px #fff; border-radius: 2px; font-weight: 600; color: #f26724; letter-spacing: 1px;
-    font-size:14px; background-color:#f1f1f1; -webkit-transition: 1s; -moz-transition: 1s; transition: 1s;}
+/* Remove table styling */
+#main table {
+    border-collapse: collapse;
+    width: 100%;
+}
 
-#main .btn:hover{
-    background-color:#f26724; outline:none;  border-radius: 2px; color:#f1f1f1; border:1px solid #f1f1f1;
-    -webkit-transition: 1s; -moz-transition: 1s; transition: 1s;
+/* Style input and button */
+#main .tb {
+    height: 40px;
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #a1887f;
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+#main .btn {
+    width: 150px;
+    height: 40px;
+    background-color: #a1887f;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Change button color on hover */
+#main .btn:hover {
+    background-color: #fff;
+    color: #a1887f;
+    border: 1px solid #a1887f;
+}
+
+/* Add responsive styles for smaller screens */
+@media only screen and (max-width: 600px) {
+    #main {
+        flex-direction: column;
+        width: 100%;
+        margin: 20px 0;
+        border: none;
+        padding: 20px;
+    }
+    #main .tb {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 100%;
+    }
 }
