@@ -16,25 +16,14 @@ import org.bson.types.Binary;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RoomListing {
-    @Id
-    private ObjectId id;
-    public String title;
-    public String description;
-    public int price;
-    public String address;
-    
-    @DocumentReference
-    public User user;
-    public Image image;
+	@Id
+	private ObjectId id;
+	public String title;
+	public String description;
+	public int price;
+	public String address;
 
-    public RoomListing(String title, String description, String price, String address) {
-        this.title = title;
-        this.description = description;
-        this.price = Integer.parseInt(price);
-        this.address = address;
-    }
-
-//    public RoomListing(String body) {
-//        this.body = body;
-//    }
+	@DocumentReference
+	public User user;
+	public Image image;
 }

@@ -22,7 +22,7 @@ public class RoomController {
     	//Base64.getEncoder().encodeToString(listing.image.data.getData());
     	
     	model.addAttribute("image", Base64.getEncoder().encodeToString(listing.image.data.getData()));
-    	System.out.println(Base64.getEncoder().encodeToString(listing.image.data.getData()));
+    	//System.out.println(Base64.getEncoder().encodeToString(listing.image.data.getData()));
         return "roompage";
     }
 }
