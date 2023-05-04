@@ -17,7 +17,7 @@
     <h1 th:text="${listing.title}">Room</h1>
 </div>
 		<div class="room-image">
-			<img th:attr="src='data:image/jpg;base64,' + ${listing.image.base64data}" alt="Example Image">
+			<img th:attr="src='data:image/jpg;base64,' + ${listing.image}" alt="Example Image">
 		</div>
 		<div class="room-details">
 			<p th:text="${listing.description}">Nice room.</p>

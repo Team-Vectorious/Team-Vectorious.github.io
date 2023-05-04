@@ -25,5 +25,5 @@ public class RoomListing {
 
 	@DocumentReference
 	public User user;
-	public Image image;
+	public String image;
 }

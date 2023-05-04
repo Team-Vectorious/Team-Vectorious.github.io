@@ -33,7 +33,7 @@
       profileBtn.addEventListener("click", () => {
         if (isVisible) {
           biographyBlock.style.display = "none";
-          isVisible = false;
+	          isVisible = false;
         } else {
           biographyBlock.style.display = "block";
           isVisible = true;
@@ -45,9 +45,9 @@
 
 <ul>
     <li th:each="listing : ${listings}">
-       <img th:src="'data:image/jpg;base64,' + ${#strings.toString(listing.image.base64data)}" width="200"/>
+       <img th:src="'data:image/jpeg;base64,' + ${#strings.toString(listing.image)}" width="200"/>
        
-        <p th:text="${listing.address}"></p>
+        <p th:text="${listing.title}"></p>
         <p th:text="'$' + ${listing.price} + ' /month'"></p>
     </li>
 </ul>
