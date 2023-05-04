@@ -23,9 +23,11 @@ public class LoginController {
     
     @CrossOrigin
     @PostMapping("/login")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
-    	System.out.println(user.email);
-    	System.out.println(user.password);
-        return new ResponseEntity<User>(userService.createUser(user), HttpStatus.CREATED);
+    public ResponseEntity<User> loginUser(@RequestBody User login) {
+    	User user = userService.findUser(login.email, login.password);
+    	if(user == null) {
+    		return new ResponseEntity<User>(user, HttpStatus.FORBIDDEN);
+    	}
+    	return new ResponseEntity<User>(user, HttpStatus.ACCEPTED);
     }
 }

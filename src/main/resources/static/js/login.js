@@ -15,5 +15,14 @@ const loginUser = async() => {
     password: pword
     })
   });
+  
+	if(response.status == 202) { //accepted
+		 //onclick="window.location.href='search'"
+		window.location.href = 'search';
+	}else{ //rejected
+		alert("Bad login");
+	}
+  
+  	console.log(response);  
 }
 submitBtn.addEventListener('click', loginUser);

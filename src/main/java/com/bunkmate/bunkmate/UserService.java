@@ -29,6 +29,12 @@ public class UserService {
         Query query = new Query().addCriteria(Criteria.where("lastName").is(lastName));
         return mongoTemplate.find(query, User.class);
     }
+    
+    public User findUser(String email, String pass) {
+    	User user = userRepository.findUserLogin(email, pass);
+    	return user;
+    }
+
 
     public User createUser(User user) {
         userRepository.insert(user);
