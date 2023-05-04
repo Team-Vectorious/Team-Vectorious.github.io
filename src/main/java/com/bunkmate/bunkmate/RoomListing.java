@@ -17,7 +17,7 @@ import org.bson.types.Binary;
 @NoArgsConstructor
 public class RoomListing {
 	@Id
-	private ObjectId id;
+	public ObjectId id;
 	public String title;
 	public String description;
 	public int price;
@@ -26,4 +26,5 @@ public class RoomListing {
 	@DocumentReference
 	public User user;
 	public String image;
+	public String MID;
 }

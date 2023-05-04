@@ -45,10 +45,11 @@
 
 <ul>
     <li th:each="listing : ${listings}">
-       <img th:src="${listing.image}" width="200"/>
-       
-        <p th:text="${listing.title}"></p>
-        <p th:text="'$' + ${listing.price} + ' /month'"></p>
+     	<a th:href="@{/room(id=${listing.id.toString()})}" style="color: #333333; text-decoration: none;">
+	       <img th:src="${listing.image}" width="200"/ style="margin-bottom: 10px;">
+	        <p th:text="${listing.title}" style="margin-bottom: 10px;"></p>
+	        <p th:text="'$' + ${listing.price} + ' /month'"></p>
+        </a>
     </li>
 </ul>
 <div class="light"></div>

@@ -17,20 +17,13 @@
     <h1 th:text="${listing.title}">Room</h1>
 </div>
 		<div class="room-image">
-			<img th:attr="src='data:image/jpg;base64,' + ${listing.image}" alt="Example Image">
+			<img th:src="${listing.image}" alt="Example Image">
 		</div>
 		<div class="room-details">
 			<p th:text="${listing.description}">Nice room.</p>
 			<ul>
 				<li><strong>Price:</strong> <span th:text="${listing.price}"></span> </li>
 				<li><strong>Location:</strong> <span th:text="${listing.address}"></span> </li>
-			</ul>
-		</div>
-		<div class="contact-details">
-			<h2>Contact Information</h2>
-			<ul>
-				<li><strong>Email:</strong> <span th:text="${listing.user.email}"></span> </li>
-				<li><strong>Phone:</strong> <span th:text="${listing.user.phoneNumber}"></span> </li>
 			</ul>
 		</div>
 	</div>
