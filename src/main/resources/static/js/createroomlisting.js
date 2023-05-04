@@ -35,10 +35,7 @@ const createRoomListing = async() => {
   let desc = document.getElementById("descriptionInput").value;
   let priceMoney = document.getElementById("priceInput").value;
   let addr = document.getElementById("addressInput").value;
-  base64 = base64.replace("data:image/png;base64,", "");
-
-//fetch("http://ec2-13-57-25-128.us-west-1.compute.amazonaws.com:8080/users/signup"
-
+  
   let response = await     fetch("/createroomlisting", {
     method: 'POST',
     headers: {
@@ -55,5 +52,6 @@ const createRoomListing = async() => {
   });
 
   console.log(response);
+  window.location.href = 'search';
 }
 postBtn.addEventListener('click', createRoomListing);
