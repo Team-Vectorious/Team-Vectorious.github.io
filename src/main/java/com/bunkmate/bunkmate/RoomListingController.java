@@ -18,12 +18,6 @@ public class RoomListingController {
         return "createroomlisting";
     }
 
-//    @CrossOrigin
-//    @PostMapping
-//    public ResponseEntity<RoomListing> createRoomListing(@RequestBody Map<String, String> payload) {
-//        return new ResponseEntity<RoomListing>(roomListingService.createRoomListing(payload.get("body"), payload.get("email")), HttpStatus.CREATED);
-//    }
-
     @CrossOrigin
     @PostMapping("/createroomlisting")
     public ResponseEntity<RoomListing> createRoomListing(@RequestBody RoomListing roomListing) {

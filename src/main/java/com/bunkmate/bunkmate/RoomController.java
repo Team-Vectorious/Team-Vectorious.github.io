@@ -1,6 +1,7 @@
 package com.bunkmate.bunkmate;
 
 import java.util.Base64;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,5 +19,12 @@ public class RoomController {
     	RoomListing listing = roomListingService.getRoomListing(id);
     	model.addAttribute("listing", listing);
         return "roompage";
+    }
+
+    @GetMapping("/findlisting")
+    public String foundListing(@RequestParam String title, Model model) {
+        Optional<RoomListing> listing = roomListingService.getRoomListingByTitle(title);
+        model.addAttribute("listing", listing);
+        return "foundlisting";
     }
 }

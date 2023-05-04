@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Found Room Listing</title>
+</head>
+<body>
+<ul>
+  <li th:text="${listing.title}">
+    <a th:href="@{/room(id=${listing.id.toString()})}" style="color: #333333; text-decoration: none;">
+      <img th:src="${listing.image}" width="200" style="margin-bottom: 10px;">
+      <p th:text="${listing.title}" style="margin-bottom: 10px;"></p>
+      <p th:text="'$' + ${listing.price} + ' /month'"></p>
+    </a>
+  </li>
+</ul>
+</body>
+</html>

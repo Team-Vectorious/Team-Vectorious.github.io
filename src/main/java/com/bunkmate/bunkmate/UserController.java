@@ -29,11 +29,6 @@ public class UserController {
         return "signup/signup";
     }
 
-//    @GetMapping("/{firstName}")
-//    public ResponseEntity<Optional<User>> getUserByFirstName(@PathVariable String firstName) {
-//        return new ResponseEntity<Optional<User>>(userService.singleUserByFirstName(firstName), HttpStatus.OK);
-//    }
-
     @GetMapping("/{lastName}")
     public ResponseEntity<List<User>> getUserByLastName(@PathVariable String lastName) {
         return new ResponseEntity<List<User>>(userService.findUserByLastName(lastName), HttpStatus.OK);

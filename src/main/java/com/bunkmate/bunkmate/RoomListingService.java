@@ -1,11 +1,9 @@
 package com.bunkmate.bunkmate;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,16 +12,6 @@ public class RoomListingService {
     private RoomListingRepository roomListingRepository;
     @Autowired
     private MongoTemplate mongoTemplate;
-//    public RoomListing createRoomListing(String body, String email) {
-//        RoomListing roomListing = roomListingRepository.insert(new RoomListing(body));
-//
-////        mongoTemplate.update(User.class)
-////                .matching(Criteria.where("email").is(email))
-////                .apply(new Update().push("roomListingIds").value(roomListing))
-////                .first();
-//
-//        return roomListing;
-//    }
 
     public RoomListing createRoomListing(RoomListing roomListing) {
         roomListingRepository.insert(roomListing);
@@ -36,5 +24,9 @@ public class RoomListingService {
     
     public ArrayList<RoomListing> getAllRoomListings() {
     	return new ArrayList<RoomListing>(roomListingRepository.getAllRoomListings());
-    }    
+    }
+
+    public Optional<RoomListing> getRoomListingByTitle(String title) {
+        return roomListingRepository.findRoomListingByTitle(title);
+    }
 }
