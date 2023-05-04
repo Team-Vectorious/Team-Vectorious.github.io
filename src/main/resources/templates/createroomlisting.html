@@ -32,20 +32,23 @@
 <div class="container">
   <div class="row">
     <div class="column1">
-      <img src="images/noImage.jpg" style= "width:350px; height:400px; text-align: left; padding-top: 30px;">
+      <img src="images/noImage.jpg" id="imageBox" style= "width:350px; height:400px; text-align: left; padding-top: 30px;">
+      <div style="margin: 16px; padding: 16px">
+        <input class="form-control form-control-lg" id="imageInput" type="file"/>
+      </div>
     </div>
 
     <div class="column2" >
       <h1 style="padding-left: 30px; padding-top: 10px;">Create Room Listing</h1>
       <form style="padding-left: 30px;">
-        <label for="title">Title:</label><br>
+        <label for="titleInput">Title:</label><br>
         <input placeholder=" Enter Title" style="width: 300px;" type="text" id="titleInput" name="title"><br>
-        <label for="description">Description:</label><br>
-        <textarea id="descriptionInput" placeholder=" Enter Description" rows="5" cols="38"></textarea><br>
+        <label for="descriptionInput">Description:</label><br>
+        <textarea id="descriptionInput" placeholder=" Enter Description" rows="5" cols="33"></textarea><br>
         <label for="price">Price:</label><br>
         <input placeholder=" Enter Price" style="width: 300px;" type="text" id="priceInput" name="price"><br>
         <label for="address">Address:</label><br>
-        <textarea id="addressInput" placeholder=" Enter Address" rows="5" cols="38"></textarea><br>
+        <textarea id="addressInput" placeholder=" Enter Address" rows="5" cols="33"></textarea><br>
       </form>
 
       <button id="postButton">Post Listing</button>

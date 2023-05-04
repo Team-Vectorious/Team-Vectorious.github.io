@@ -1,10 +1,41 @@
 var postBtn = document.getElementById("postButton");
 
+ //elements for image upload
+const input = document.getElementById("imageInput");
+const avatar = document.getElementById("imageBox");
+
+const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+
+        fileReader.onload = () => {
+            resolve(fileReader.result);
+        };
+
+        fileReader.onerror = (error) => {
+            reject(error);
+        };
+    });
+};
+let base64 = ""
+const uploadImage = async (event) => {
+    const file = event.target.files[0];
+    base64 = await convertBase64(file);
+    avatar.src = base64;
+};
+
+input.addEventListener("change", (e) => {
+    uploadImage(e);
+});
+
+
 const createRoomListing = async() => {
   let titleName = document.getElementById("titleInput").value;
   let desc = document.getElementById("descriptionInput").value;
   let priceMoney = document.getElementById("priceInput").value;
   let addr = document.getElementById("addressInput").value;
+  base64 = base64.replace("data:image/png;base64,", "");
 
 //fetch("http://ec2-13-57-25-128.us-west-1.compute.amazonaws.com:8080/users/signup"
 
@@ -18,7 +49,8 @@ const createRoomListing = async() => {
     title: titleName,
     description: desc,
     price: priceMoney,
-    address: addr
+    address: addr,
+    image:base64
     })
   });
 
