@@ -1,7 +1,7 @@
 # Bunkmate
 
 Bunkmate is a web service that serves rooms and displays room listings to users. Users can get a lot of detailed information about rooms.
-
+![](http://cs480-projects.github.io/teams-spring2023/Vector-ious/images/mainPage.png)
 ## Features
 
 - Users can browse room listings and view details about each room.
