@@ -17,4 +17,10 @@ public class RoomListingController {
     public String roomListingPage(Model model) {
         return "createroomlisting";
     }
+    
+    @CrossOrigin
+    @PostMapping("/createroomlisting")
+    public ResponseEntity<RoomListing> createRoomListing(@RequestBody RoomListing roomListing) {
+        return new ResponseEntity<RoomListing>(roomListingService.createRoomListing(roomListing), HttpStatus.CREATED);
+    }
 }
