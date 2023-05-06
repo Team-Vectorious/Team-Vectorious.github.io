@@ -10,8 +10,10 @@
 
 <!--Working search bar-->
 <form>
-    <input type="text" placeholder="Search for a room...">
-    <button id="searchSubmitBtn" onclick="window.location.th:href=@{/findlisting(searchItem=${listing.title.toString()})}" name="searchItem" type="submit">Search</button>
+    <input id="searchInput" type="text" placeholder="Search for a room...">
+    <button class="submitButton" id="searchSubmitBtn" onclick="submitSearch(event)" type="submit">Search</button>
+
+    
 </form>
 
 <!--This displays the first initial of the user that logged in. This is just an example.-->
@@ -39,6 +41,13 @@
           isVisible = true;
         }
       });
+      
+      function submitSearch(event) {
+    	  event.preventDefault();
+          var title = document.getElementById('searchInput').value;
+          window.location.href = "search?title=" + encodeURIComponent(title);
+          return false;
+      }      
 </script>
 
 <!--For every listing in the roomListings database, output the address and the price.-->
@@ -53,6 +62,5 @@
     </li>
 </ul>
 <div class="light"></div>
-<!--<script src="js/search.js"></script>-->
 </body>
 </html>

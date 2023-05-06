@@ -18,7 +18,7 @@ a, a:hover, a:visited, a:active {
   text-decoration: none;
  }
  
-button[type="submit"] {
+.searchButton {
     font-weight: bold;
     margin-left: 15px;
     padding: 8px 12px;
@@ -27,7 +27,6 @@ button[type="submit"] {
     border-color: blue;
     border-radius: 9px;
     cursor: pointer;
-
 }
 
 #create-post-btn {

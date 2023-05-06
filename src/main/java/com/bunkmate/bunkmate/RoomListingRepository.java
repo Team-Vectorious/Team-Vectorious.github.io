@@ -16,6 +16,6 @@ public interface RoomListingRepository extends MongoRepository<RoomListing, Obje
 	@Query("{}")
 	List<RoomListing> getAllRoomListings();
 
-	@Query("{title: '?0'}")
-	Optional<RoomListing> findRoomListingByTitle(String title);
+	@Query("{title: { $regex: /?0/ } }")
+	List<RoomListing> findRoomListingByTitle(String title);
 }

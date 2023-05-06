@@ -1,5 +1,6 @@
 package com.bunkmate.bunkmate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class RoomListingService {
     	return new ArrayList<RoomListing>(roomListingRepository.getAllRoomListings());
     }
 
-    public Optional<RoomListing> getRoomListingByTitle(String title) {
+    public List<RoomListing> getRoomListingByTitle(String title) {
         return roomListingRepository.findRoomListingByTitle(title);
     }
 }

@@ -20,11 +20,4 @@ public class RoomController {
     	model.addAttribute("listing", listing);
         return "roompage";
     }
-
-    @GetMapping("/findlisting")
-    public String foundListing(@RequestParam String title, Model model) {
-        Optional<RoomListing> listing = roomListingService.getRoomListingByTitle(title);
-        model.addAttribute("listing", listing);
-        return "foundlisting";
-    }
 }
