@@ -11,7 +11,7 @@
 <!--Working search bar-->
 <form>
     <input id="searchInput" type="text" placeholder="Search for a room...">
-    <button class="submitButton" id="searchSubmitBtn" onclick="submitSearch(event)" type="submit">Search</button>
+    <button class="searchButton" id="searchSubmitBtn" onclick="submitSearch()" type="button">Search</button>
 
     
 </form>
@@ -42,12 +42,10 @@
         }
       });
       
-      function submitSearch(event) {
-    	  event.preventDefault();
+      function submitSearch() {
           var title = document.getElementById('searchInput').value;
           window.location.href = "search?title=" + encodeURIComponent(title);
-          return false;
-      }      
+      }
 </script>
 
 <!--For every listing in the roomListings database, output the address and the price.-->
